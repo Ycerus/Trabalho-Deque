@@ -43,24 +43,31 @@ int main() {
     case 3:
         /* Código */
         break;
+
     case 4:
         /* Código */
         break;
+
     case 5:
         /* Código */
         break;
+
     case 6:
         /* Código */
         break;
+
     case 7:
         /* Código */
         break;
+
     case 8:
         /* Código */
         break;
+
     case 9:
         /* Código */
         break;
+
     default:
         break;
     }
