@@ -11,9 +11,15 @@ int main() {
     do
     {
         printf("-----Menu-----\n");   //Aqui é o inicio do Menu, basta alterar a descrição das operações
-        printf("1 - Inserir\n");      
-        printf("2 - Remover\n");
-        printf("3 - Buscar\n");
+        printf("1 - Inserir inicio\n");      
+        printf("2 - Inserir final\n");
+        printf("3 - Remover inicio\n");
+        printf("4 - Remover final\n");
+        printf("5 - Buscar inicio\n");
+        printf("6 - Buscar final\n");
+        printf("7 - Imprimir inicio->final\n");
+        printf("8 - Imprimir final->inicio\n");
+        printf("9 - Ordenar (Quick Sort)\n");
         printf("0 - Sair\n");
         printf("---------------\n");
 
@@ -37,7 +43,24 @@ int main() {
     case 3:
         /* Código */
         break;
-    
+    case 4:
+        /* Código */
+        break;
+    case 5:
+        /* Código */
+        break;
+    case 6:
+        /* Código */
+        break;
+    case 7:
+        /* Código */
+        break;
+    case 8:
+        /* Código */
+        break;
+    case 9:
+        /* Código */
+        break;
     default:
         break;
     }
