@@ -5,6 +5,7 @@
 int main() {
 
     int valor;
+    Lista *lista = criar_lista();
 
     valor = 1;
 
@@ -57,7 +58,7 @@ int main() {
         break;
 
     case 7:
-        /* Código */
+        imprimir_inicio_final(lista);
         break;
 
     case 8:

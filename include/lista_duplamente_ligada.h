@@ -2,8 +2,9 @@
 #include <stdlib.h> 
 #include <stdbool.h> 
 
-typedef struct no No;
-typedef struct cabeca cabeca;
+typedef struct registro Aluno;
+typedef struct lista Lista;
+typedef struct elemento elemento;
 
 void adicionar_inicio():
 void adicionar_final():
