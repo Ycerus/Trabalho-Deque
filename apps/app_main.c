@@ -1,8 +1,17 @@
 #include "../include/lista_duplamente_ligada.h"
 #include <stdio.h>
 #include <stdlib.h> 
+#include <string.h> 
 
 int main() {
+
+    struct registro
+    {
+        int cpf;
+        char nome[50];
+        char curso[50];
+        int idade;
+    }aluno_main;
 
     int valor;
     Lista *lista = criar_lista();
@@ -33,7 +42,15 @@ int main() {
             break;
 
         case 2:
-            /* Código */
+            printf("Dados CPF:");
+                scanf("%d", &aluno_main.cpf);
+            printf("Dados Nome:");
+                gets(aluno_main.nome);
+            printf("Dados Nome do Curso:");
+                gets(aluno_main.curso);
+            printf("Dados Idade:");
+                scanf("%d", &aluno_main.idade);
+            adicionar_final(lista, aluno_main);
             break;
 
         case 3:

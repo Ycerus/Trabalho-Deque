@@ -74,12 +74,11 @@ int imprimir_inicio_final(Lista *ptr_lista){
 
         printf("Lista: {");
 
-        for (no_atual->ptr_proximo = ptr_lista->ptr_cabeca;
-            no_atual->ptr_proximo != no_final;
+        for (no_atual = ptr_lista->ptr_cabeca;
+            no_atual != no_final;
             no_atual = no_atual->ptr_proximo)
         {
             printf("%d -> ", no_atual->dados->cpf);    
-            printf("passouuuu!");    
         }
             printf("%d -> \n", no_atual->dados->cpf);
             
