@@ -6,16 +6,18 @@ typedef struct registro Aluno;
 typedef struct lista Lista;
 typedef struct elemento elemento;
 
-void adicionar_inicio():
-void adicionar_final():
+Lista *criar_lista();
 
-void remover_inicio():
-void remover_final():
+int adicionar_inicio();
+int adicionar_final();
 
-void buscar_inicio():
-void buscar_final():
+void remover_inicio();
+void remover_final();
 
-void imprimir_inicio_final();
+void buscar_inicio();
+void buscar_final();
+
+int imprimir_inicio_final();
 void imprimir_final_inicio();
 
-void ordenar_quick():
+void ordenar_quick();

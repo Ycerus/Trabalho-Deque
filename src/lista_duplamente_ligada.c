@@ -1,4 +1,4 @@
-#include "lista_duplamente_ligada.h"
+#include "../include/lista_duplamente_ligada.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -14,9 +14,9 @@ struct registro
 
 struct elemento
 {
-    Aluno *ptr_proximo;
-    Aluno dados;
-    Aluno *ptr_anterior;
+    elemento *ptr_proximo;
+    Aluno *dados;
+    elemento *ptr_anterior;
 };
 
 // Definindo uma struct que será a cabeça-cauda do nosso DEQUE
@@ -35,13 +35,13 @@ Lista *criar_lista() {
    prt_lista->ptr_cabeca = NULL;
    prt_lista->ptr_cauda = NULL;
 
-   return  prt_lista;
+   return prt_lista;
 
 }
 
-void adicionar_final(Lista *ptr_lista, Aluno novos_dados){
+int adicionar_final(Lista *ptr_lista, Aluno *novos_dados){
     
-    if(lista == NULL) return 0; // Verificação se existe uma struct lista na memória
+    if(ptr_lista == NULL) return 0; // Verificação se existe uma struct lista na memória
     elemento *no = (elemento*) malloc(sizeof(elemento));
     if(no ==  NULL) return 0; // Verificação se foi possível alocar memória para um novo nó (aluno)
 
@@ -58,29 +58,34 @@ void adicionar_final(Lista *ptr_lista, Aluno novos_dados){
     ptr_lista->ptr_cauda = no;
     ptr_lista->tamanho++;
 
+    return 1;
 }
 
 void remover_final(Lista *ptr_auxiliar){
 
 }
 
-void imprimir_inicio_final(Lista *ptr_lista){
+int imprimir_inicio_final(Lista *ptr_lista){
 
     elemento *no_final = ptr_lista->ptr_cauda;
-    elemento no_atual;
+    elemento *no_atual;
 
-    printf("Lista: {")
     if(ptr_lista != NULL){
-        for (no_atual = ptr_lista->ptr_cabeca;
-            no_atual->ptr_proximo != NULL;
+
+        printf("Lista: {");
+
+        for (no_atual->ptr_proximo = ptr_lista->ptr_cabeca;
+            no_atual->ptr_proximo != no_final;
             no_atual = no_atual->ptr_proximo)
         {
-            printf("%d -> ", no_atual->dados);   
+            printf("%d -> ", no_atual->dados->cpf);    
+            printf("passouuuu!");    
         }
-            printf("%d -> \n", no_atual->dados);
+            printf("%d -> \n", no_atual->dados->cpf);
+            
     } else {
         printf("NULL\n");
     }
-    
+    return 1;
 
 }
