@@ -1,8 +1,9 @@
 #include "lista_duplamente_ligada.h"
 #include <stdio.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 
-int main() {
+int main()
+{
 
     int valor;
 
@@ -10,8 +11,8 @@ int main() {
 
     do
     {
-        printf("-----Menu-----\n");   //Aqui é o inicio do Menu, basta alterar a descrição das operações
-        printf("1 - Inserir inicio\n");      
+        printf("-----Menu-----\n"); // Aqui é o inicio do Menu, basta alterar a descrição das operações
+        printf("1 - Inserir inicio\n");
         printf("2 - Inserir final\n");
         printf("3 - Remover inicio\n");
         printf("4 - Remover final\n");
@@ -25,51 +26,49 @@ int main() {
 
         scanf("%d", &valor);
 
-    } while (valor != 0);
-    
+        switch (valor)
+        {
+        case 1:
+            printf("teste!!!!!!\n\n\n");
+            break;
 
+        case 2:
+            /* Código */
+            break;
+
+        case 3:
+            /* Código */
+            break;
+
+        case 4:
+            /* Código */
+            break;
+
+        case 5:
+            /* Código */
+            break;
+
+        case 6:
+            /* Código */
+            break;
+
+        case 7:
+            /* Código */
+            break;
+
+        case 8:
+            /* Código */
+            break;
+
+        case 9:
+            /* Código */
+            break;
+
+        default:
+            break;
+        }
+
+    } while (valor != 0);
 
     // A partir daqui é o resultado da seleção do Menu.
-    switch (valor)
-    {
-    case 1:
-        /* Código */
-        break;
-
-    case 2:
-        /* Código */
-        break;
-
-    case 3:
-        /* Código */
-        break;
-
-    case 4:
-        /* Código */
-        break;
-
-    case 5:
-        /* Código */
-        break;
-
-    case 6:
-        /* Código */
-        break;
-
-    case 7:
-        /* Código */
-        break;
-
-    case 8:
-        /* Código */
-        break;
-
-    case 9:
-        /* Código */
-        break;
-
-    default:
-        break;
-    }
-
 }
