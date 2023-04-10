@@ -1,18 +1,25 @@
-#include "lista_duplamente_ligada.h"
+#include "../include/lista_duplamente_ligada.h"
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> 
+#include <string.h> 
 
-int main()
-{
+int main() {
+
+    struct registro
+    {
+        int cpf;
+        char nome[50];
+        char curso[50];
+        int idade;
+    }aluno_main;
 
     int valor;
-
-    valor = 1;
+    Lista *lista = criar_lista();
 
     do
     {
-        printf("-----Menu-----\n"); // Aqui é o inicio do Menu, basta alterar a descrição das operações
-        printf("1 - Inserir inicio\n");
+        printf("-----Menu-----\n");   //Aqui é o inicio do Menu
+        printf("1 - Inserir inicio\n");      
         printf("2 - Inserir final\n");
         printf("3 - Remover inicio\n");
         printf("4 - Remover final\n");
@@ -26,14 +33,24 @@ int main()
 
         scanf("%d", &valor);
 
+
+        // A partir daqui é o resultado da seleção do Menu.
         switch (valor)
         {
         case 1:
-            printf("teste!!!!!!\n\n\n");
+            /* Código */
             break;
 
         case 2:
-            /* Código */
+            printf("Dados CPF:");
+                scanf("%d", &aluno_main.cpf);
+            printf("Dados Nome:");
+                gets(aluno_main.nome);
+            printf("Dados Nome do Curso:");
+                gets(aluno_main.curso);
+            printf("Dados Idade:");
+                scanf("%d", &aluno_main.idade);
+            adicionar_final(lista, aluno_main);
             break;
 
         case 3:
@@ -53,9 +70,8 @@ int main()
             break;
 
         case 7:
-            /* Código */
+            valor = imprimir_inicio_final(lista);
             break;
-
         case 8:
             /* Código */
             break;
@@ -67,8 +83,6 @@ int main()
         default:
             break;
         }
-
     } while (valor != 0);
 
-    // A partir daqui é o resultado da seleção do Menu.
 }

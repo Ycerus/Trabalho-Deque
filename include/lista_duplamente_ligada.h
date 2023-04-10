@@ -2,12 +2,22 @@
 #include <stdlib.h> 
 #include <stdbool.h> 
 
-typedef struct no No;
-
+typedef struct registro Aluno;
 typedef struct lista Lista;
+typedef struct elemento elemento;
 
-typedef struct no No;
+Lista *criar_lista();
 
-typedef struct lista Lista;
+int adicionar_inicio();
+int adicionar_final();
 
-Lista *iniciar_lista();
+void remover_inicio();
+void remover_final();
+
+void buscar_inicio();
+void buscar_final();
+
+int imprimir_inicio_final();
+void imprimir_final_inicio();
+
+void ordenar_quick();
