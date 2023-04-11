@@ -97,18 +97,32 @@ int adicionar_final(Lista *ptr_lista, Aluno novos_dados)
 
 void remover_final(Lista *ptr_lista)
 {
-
-    elemento *no_auxiliar = ptr_lista->ptr_cauda;
-    ptr_lista->ptr_cauda = ptr_lista->ptr_cauda->ptr_anterior;
-    free(no_auxiliar);
+    if (ptr_lista->tamanho != 0)
+    {
+        elemento *no_auxiliar = ptr_lista->ptr_cauda;
+        ptr_lista->ptr_cauda = ptr_lista->ptr_cauda->ptr_anterior;
+        free(no_auxiliar);
+        ptr_lista->tamanho--;
+    }
+    else
+    {
+        printf("lista vazia\n");
+    }
 }
 
 void remover_inicio(Lista *ptr_lista)
 {
-
-    elemento *no_auxiliar = ptr_lista->ptr_cabeca;
-    ptr_lista->ptr_cabeca = ptr_lista->ptr_cabeca->ptr_proximo;
-    free(no_auxiliar);
+    if (ptr_lista->tamanho != 0)
+    {
+        elemento *no_auxiliar = ptr_lista->ptr_cabeca;
+        ptr_lista->ptr_cabeca = ptr_lista->ptr_cabeca->ptr_proximo;
+        free(no_auxiliar);
+        ptr_lista->tamanho--;
+    }
+    else
+    {
+        printf("lista vazia\n");
+    }
 }
 
 void imprimir_inicio_final(Lista *ptr_lista)
@@ -117,10 +131,11 @@ void imprimir_inicio_final(Lista *ptr_lista)
     elemento *no_final = ptr_lista->ptr_cauda;
     elemento *no_atual;
 
-    if (ptr_lista != NULL)
+    if (ptr_lista->tamanho != 0)
     {
 
-        printf("Lista: {");
+        printf("Lista \n");
+        printf("--------------------------\n");
 
         for (no_atual = ptr_lista->ptr_cabeca;
              no_atual != no_final;
@@ -130,45 +145,79 @@ void imprimir_inicio_final(Lista *ptr_lista)
             printf("Cpf -> %d \n", no_atual->dados.cpf);
             printf("Curso -> %s \n", no_atual->dados.curso);
             printf("Idade -> %d \n", no_atual->dados.idade);
+            printf("--------------------------\n");
         }
         printf("Nome -> %s \n", no_atual->dados.nome);
         printf("Cpf -> %d \n", no_atual->dados.cpf);
         printf("Curso -> %s \n", no_atual->dados.curso);
         printf("Idade -> %d \n", no_atual->dados.idade);
+        printf("--------------------------\n");
     }
     else
     {
-        printf("NULL\n");
+        printf("lista vazia\n");
     }
 }
 
 void imprimir_final_inicio(Lista *ptr_lista)
 {
-
-    elemento *no_inicio = ptr_lista->ptr_cabeca;
     elemento *no_atual;
 
-    if (ptr_lista != NULL)
+    if (ptr_lista->tamanho != 0)
     {
 
         printf("Lista\n");
+        printf("--------------------------\n");
 
-        for (no_atual = ptr_lista->ptr_cabeca;
-             no_atual != no_inicio;
+        for (no_atual = ptr_lista->ptr_cauda;
+             no_atual != ptr_lista->ptr_cabeca;
              no_atual = no_atual->ptr_anterior)
         {
             printf("Nome -> %s \n", no_atual->dados.nome);
             printf("Cpf -> %d \n", no_atual->dados.cpf);
             printf("Curso -> %s \n", no_atual->dados.curso);
             printf("Idade -> %d \n", no_atual->dados.idade);
+            printf("--------------------------\n");
         }
         printf("Nome -> %s \n", no_atual->dados.nome);
         printf("Cpf -> %d \n", no_atual->dados.cpf);
         printf("Curso -> %s \n", no_atual->dados.curso);
         printf("Idade -> %d \n", no_atual->dados.idade);
+        printf("--------------------------\n");
     }
     else
     {
-        printf("Lista Vazia!\n");
+        printf("lista vazia\n");
     }
 }
+
+void retornar_tamanho(Lista *ptr_lista)
+{
+    int tamanho = ptr_lista->tamanho;
+    printf("Tamanho -> %i\n", tamanho);
+};
+
+void buscar_inicio(Lista *ptr_lista)
+{
+    elemento *primeiro_no = ptr_lista->ptr_cabeca;
+
+    printf("O primeiro aluno eh : \n");
+    printf("Nome -> %s \n", primeiro_no->dados.nome);
+    printf("Cpf -> %d \n", primeiro_no->dados.cpf);
+    printf("Curso -> %s \n", primeiro_no->dados.curso);
+    printf("Idade -> %d \n", primeiro_no->dados.idade);
+    printf("--------------------------\n");
+};
+
+void buscar_final(Lista *ptr_lista)
+{
+    elemento *ultimo_no = ptr_lista->ptr_cauda;
+
+    printf("O ultimo aluno eh : \n");
+    printf("Nome -> %s \n", ultimo_no->dados.nome);
+    printf("Cpf -> %d \n", ultimo_no->dados.cpf);
+    printf("Curso -> %s \n", ultimo_no->dados.curso);
+    printf("Idade -> %d \n", ultimo_no->dados.idade);
+    printf("--------------------------\n");
+
+};

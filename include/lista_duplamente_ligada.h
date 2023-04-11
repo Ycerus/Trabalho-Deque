@@ -11,6 +11,8 @@ Lista *criar_lista();
 void adicionar_inicio();
 int adicionar_final();
 
+void retornar_tamanho();
+
 void remover_inicio();
 void remover_final();
 

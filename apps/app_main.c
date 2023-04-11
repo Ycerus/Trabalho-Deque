@@ -1,9 +1,10 @@
 #include "../include/lista_duplamente_ligada.h"
 #include <stdio.h>
-#include <stdlib.h> 
-#include <string.h> 
+#include <stdlib.h>
+#include <string.h>
 
-int main() {
+int main()
+{
 
     struct registro
     {
@@ -11,55 +12,61 @@ int main() {
         char nome[50];
         char curso[50];
         int idade;
-    }aluno_main;
+    } aluno_main;
 
     int valor;
     Lista *lista = criar_lista();
 
     do
-    {
-        printf("-----Menu-----\n");   //Aqui é o inicio do Menu
-        printf("1 - Inserir inicio\n");      
-        printf("2 - Inserir final\n");
-        printf("3 - Remover inicio\n");
-        printf("4 - Remover final\n");
-        printf("5 - Buscar inicio\n");
-        printf("6 - Buscar final\n");
-        printf("7 - Imprimir inicio->final\n");
-        printf("8 - Imprimir final->inicio\n");
+    { // Menu de seleção de ações.
+        printf("-----Menu-----\n");
+        printf("1 - Inserir aluno no inicio\n"); // Inserir inicio.
+        printf("2 - Inserir aluno no final\n");  // Inserir final.
+        printf("3 - Remover aluno do inicio\n"); // Remover inicio.
+        printf("4 - Remover aluno do final\n");  // Remover final.
+        printf("5 - Buscar primeiro aluno\n");   // Buscar inicio.
+        printf("6 - Buscar ultimo aluno\n");     // Buscar final.
+        printf("7 - Imprimir inicio->final\n");  // Imprimir do inicio até o final.
+        printf("8 - Imprimir final->inicio\n");  // Imprimir do final até o inicio.
+        printf("9 - Retornar Tamanho\n");
         printf("0 - Sair\n");
         printf("---------------\n");
 
         scanf("%d", &valor);
 
-
         // A partir daqui é o resultado da seleção do Menu.
         switch (valor)
         {
         case 1:
-            printf("Dados CPF: ");
-                scanf("%d", &aluno_main.cpf);
-            printf("Dados Nome: ");
+            printf("Insira os dados do aluno a seguir: \n");
+            printf("Nome: ");
                 fflush(stdin);
                 gets(aluno_main.nome);
-            printf("Dados Nome do Curso: ");
+            printf("CPF: ");
+                fflush(stdin);
+                scanf("%d", &aluno_main.cpf);
+            printf("Nome do Curso: ");
                 fflush(stdin);
                 gets(aluno_main.curso);
-            printf("Dados Idade: ");
+            printf("Idade: ");
+                fflush(stdin);
                 scanf("%d", &aluno_main.idade);
             adicionar_inicio(lista, aluno_main);
             break;
 
         case 2:
-            printf("Dados CPF: ");
-                scanf("%d", &aluno_main.cpf);
-            printf("Dados Nome: ");
+            printf("Insira os dados do aluno a seguir: \n");
+            printf("Nome: ");
                 fflush(stdin);
                 gets(aluno_main.nome);
-            printf("Dados Nome do Curso: ");
+            printf("CPF: ");
+                fflush(stdin);
+                scanf("%d", &aluno_main.cpf);
+            printf("Nome do Curso: ");
                 fflush(stdin);
                 gets(aluno_main.curso);
-            printf("Dados Idade: ");
+            printf("Idade: ");
+                fflush(stdin);
                 scanf("%d", &aluno_main.idade);
             adicionar_final(lista, aluno_main);
             break;
@@ -73,11 +80,11 @@ int main() {
             break;
 
         case 5:
-            /* Código */
+            buscar_inicio(lista);
             break;
 
         case 6:
-            /* Código */
+            buscar_final(lista);
             break;
 
         case 7:
@@ -88,12 +95,11 @@ int main() {
             break;
 
         case 9:
-            /* Código */
+            retornar_tamanho(lista);
             break;
 
         default:
             break;
         }
     } while (valor != 0);
-
 }
