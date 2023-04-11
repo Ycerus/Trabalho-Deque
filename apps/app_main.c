@@ -60,7 +60,7 @@ int main() {
             break;
 
         case 4:
-            /* Código */
+            remover_final(lista);
             break;
 
         case 5:

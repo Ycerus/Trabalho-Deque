@@ -61,12 +61,13 @@ int adicionar_final(Lista *ptr_lista, Aluno novos_dados){
     return 1;
 }
 
-/*void remover_final(Lista *ptr_lista){
+void remover_final(Lista *ptr_lista){
 
-    elemento *no_auxiliar = ptr_lista;
+    elemento *no_auxiliar = ptr_lista->ptr_cauda;
+    ptr_lista->ptr_cauda = ptr_lista->ptr_cauda->ptr_anterior;
+    free(no_auxiliar);
 
-
-}*/
+}
 
 void imprimir_inicio_final(Lista *ptr_lista){
 
