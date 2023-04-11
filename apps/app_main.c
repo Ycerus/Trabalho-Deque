@@ -8,7 +8,7 @@ int main()
 
     struct registro
     {
-        int cpf;
+        char cpf[12];
         char nome[50];
         char curso[50];
         int idade;
@@ -44,7 +44,7 @@ int main()
                 gets(aluno_main.nome);
             printf("CPF: ");
                 fflush(stdin);
-                scanf("%d", &aluno_main.cpf);
+                gets(aluno_main.cpf);
             printf("Nome do Curso: ");
                 fflush(stdin);
                 gets(aluno_main.curso);
@@ -61,7 +61,7 @@ int main()
                 gets(aluno_main.nome);
             printf("CPF: ");
                 fflush(stdin);
-                scanf("%d", &aluno_main.cpf);
+                gets(aluno_main.cpf);
             printf("Nome do Curso: ");
                 fflush(stdin);
                 gets(aluno_main.curso);

@@ -6,7 +6,7 @@
 // Definindo uma struct para, futuramente, alocar dinamicamente novos registros
 struct registro
 {
-    int cpf;
+    char cpf[12];
     char nome[50];
     char curso[50];
     int idade;
@@ -142,13 +142,13 @@ void imprimir_inicio_final(Lista *ptr_lista)
              no_atual = no_atual->ptr_proximo)
         {
             printf("Nome -> %s \n", no_atual->dados.nome);
-            printf("Cpf -> %d \n", no_atual->dados.cpf);
+            printf("Cpf -> %s \n", no_atual->dados.cpf);
             printf("Curso -> %s \n", no_atual->dados.curso);
             printf("Idade -> %d \n", no_atual->dados.idade);
             printf("--------------------------\n");
         }
         printf("Nome -> %s \n", no_atual->dados.nome);
-        printf("Cpf -> %d \n", no_atual->dados.cpf);
+        printf("Cpf -> %s \n", no_atual->dados.cpf);
         printf("Curso -> %s \n", no_atual->dados.curso);
         printf("Idade -> %d \n", no_atual->dados.idade);
         printf("--------------------------\n");
@@ -174,13 +174,13 @@ void imprimir_final_inicio(Lista *ptr_lista)
              no_atual = no_atual->ptr_anterior)
         {
             printf("Nome -> %s \n", no_atual->dados.nome);
-            printf("Cpf -> %d \n", no_atual->dados.cpf);
+            printf("Cpf -> %s \n", no_atual->dados.cpf);
             printf("Curso -> %s \n", no_atual->dados.curso);
             printf("Idade -> %d \n", no_atual->dados.idade);
             printf("--------------------------\n");
         }
         printf("Nome -> %s \n", no_atual->dados.nome);
-        printf("Cpf -> %d \n", no_atual->dados.cpf);
+        printf("Cpf -> %s \n", no_atual->dados.cpf);
         printf("Curso -> %s \n", no_atual->dados.curso);
         printf("Idade -> %d \n", no_atual->dados.idade);
         printf("--------------------------\n");
@@ -203,7 +203,7 @@ void buscar_inicio(Lista *ptr_lista)
 
     printf("O primeiro aluno eh : \n");
     printf("Nome -> %s \n", primeiro_no->dados.nome);
-    printf("Cpf -> %d \n", primeiro_no->dados.cpf);
+    printf("Cpf -> %s \n", primeiro_no->dados.cpf);
     printf("Curso -> %s \n", primeiro_no->dados.curso);
     printf("Idade -> %d \n", primeiro_no->dados.idade);
     printf("--------------------------\n");
@@ -215,7 +215,7 @@ void buscar_final(Lista *ptr_lista)
 
     printf("O ultimo aluno eh : \n");
     printf("Nome -> %s \n", ultimo_no->dados.nome);
-    printf("Cpf -> %d \n", ultimo_no->dados.cpf);
+    printf("Cpf -> %s \n", ultimo_no->dados.cpf);
     printf("Curso -> %s \n", ultimo_no->dados.curso);
     printf("Idade -> %d \n", ultimo_no->dados.idade);
     printf("--------------------------\n");
