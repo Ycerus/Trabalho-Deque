@@ -15,7 +15,7 @@ struct registro
 struct elemento
 {
     elemento *ptr_proximo;
-    Aluno *dados;
+    Aluno dados;
     elemento *ptr_anterior;
 };
 
@@ -39,7 +39,7 @@ Lista *criar_lista() {
 
 }
 
-int adicionar_final(Lista *ptr_lista, Aluno *novos_dados){
+int adicionar_final(Lista *ptr_lista, Aluno novos_dados){
     
     if(ptr_lista == NULL) return 0; // Verificação se existe uma struct lista na memória
     elemento *no = (elemento*) malloc(sizeof(elemento));
@@ -61,11 +61,14 @@ int adicionar_final(Lista *ptr_lista, Aluno *novos_dados){
     return 1;
 }
 
-void remover_final(Lista *ptr_auxiliar){
+/*void remover_final(Lista *ptr_lista){
 
-}
+    elemento *no_auxiliar = ptr_lista;
 
-int imprimir_inicio_final(Lista *ptr_lista){
+
+}*/
+
+void imprimir_inicio_final(Lista *ptr_lista){
 
     elemento *no_final = ptr_lista->ptr_cauda;
     elemento *no_atual;
@@ -78,13 +81,12 @@ int imprimir_inicio_final(Lista *ptr_lista){
             no_atual != no_final;
             no_atual = no_atual->ptr_proximo)
         {
-            printf("%d -> ", no_atual->dados->cpf);    
+            printf("%d -> ", no_atual->dados.cpf);    
         }
-            printf("%d -> \n", no_atual->dados->cpf);
+            printf("%d -> \n", no_atual->dados.cpf);
             
     } else {
         printf("NULL\n");
     }
-    return 1;
 
 }

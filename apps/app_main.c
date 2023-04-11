@@ -42,13 +42,15 @@ int main() {
             break;
 
         case 2:
-            printf("Dados CPF:");
+            printf("Dados CPF: ");
                 scanf("%d", &aluno_main.cpf);
-            printf("Dados Nome:");
+            printf("Dados Nome: ");
+                fflush(stdin);
                 gets(aluno_main.nome);
-            printf("Dados Nome do Curso:");
+            printf("Dados Nome do Curso: ");
+                fflush(stdin);
                 gets(aluno_main.curso);
-            printf("Dados Idade:");
+            printf("Dados Idade: ");
                 scanf("%d", &aluno_main.idade);
             adicionar_final(lista, aluno_main);
             break;
@@ -70,7 +72,7 @@ int main() {
             break;
 
         case 7:
-            valor = imprimir_inicio_final(lista);
+            imprimir_inicio_final(lista);
             break;
         case 8:
             /* Código */
