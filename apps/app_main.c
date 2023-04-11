@@ -27,7 +27,6 @@ int main() {
         printf("6 - Buscar final\n");
         printf("7 - Imprimir inicio->final\n");
         printf("8 - Imprimir final->inicio\n");
-        printf("9 - Ordenar (Quick Sort)\n");
         printf("0 - Sair\n");
         printf("---------------\n");
 
@@ -85,7 +84,7 @@ int main() {
             imprimir_inicio_final(lista);
             break;
         case 8:
-            /* Código */
+            imprimir_final_inicio(lista);
             break;
 
         case 9:
