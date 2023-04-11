@@ -17,7 +17,5 @@ void remover_final();
 void buscar_inicio();
 void buscar_final();
 
-int imprimir_inicio_final();
+void imprimir_inicio_final();
 void imprimir_final_inicio();
-
-void ordenar_quick();
