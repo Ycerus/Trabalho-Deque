@@ -8,7 +8,7 @@ typedef struct elemento elemento;
 
 Lista *criar_lista();
 
-int adicionar_inicio();
+void adicionar_inicio();
 int adicionar_final();
 
 void remover_inicio();

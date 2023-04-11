@@ -38,7 +38,17 @@ int main() {
         switch (valor)
         {
         case 1:
-            /* Código */
+            printf("Dados CPF: ");
+                scanf("%d", &aluno_main.cpf);
+            printf("Dados Nome: ");
+                fflush(stdin);
+                gets(aluno_main.nome);
+            printf("Dados Nome do Curso: ");
+                fflush(stdin);
+                gets(aluno_main.curso);
+            printf("Dados Idade: ");
+                scanf("%d", &aluno_main.idade);
+            adicionar_inicio(lista, aluno_main);
             break;
 
         case 2:
@@ -56,7 +66,7 @@ int main() {
             break;
 
         case 3:
-            /* Código */
+            remover_inicio(lista);
             break;
 
         case 4:

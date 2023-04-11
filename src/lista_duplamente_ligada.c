@@ -39,6 +39,33 @@ Lista *criar_lista() {
 
 }
 
+void adicionar_inicio(Lista *ptr_lista, Aluno dados){
+    elemento *ptr_novo_elemento = (elemento*) malloc(sizeof(elemento));
+
+    ptr_novo_elemento->dados = dados;
+    ptr_novo_elemento->ptr_anterior = NULL;
+    ptr_novo_elemento->ptr_proximo = NULL;
+
+    ptr_novo_elemento->dados = dados;
+
+    if (ptr_lista->ptr_cabeca == NULL)
+    {
+        ptr_lista->ptr_cabeca = ptr_novo_elemento;
+        ptr_lista->ptr_cauda = ptr_novo_elemento;
+    } else{
+        
+        ptr_novo_elemento->ptr_proximo = ptr_lista->ptr_cabeca;
+
+        ptr_lista->ptr_cabeca->ptr_anterior = ptr_novo_elemento;
+
+        ptr_lista->ptr_cabeca = ptr_novo_elemento;
+
+    }
+
+    ptr_lista->tamanho++;
+    
+}
+
 int adicionar_final(Lista *ptr_lista, Aluno novos_dados){
     
     if(ptr_lista == NULL) return 0; // Verificação se existe uma struct lista na memória
@@ -67,6 +94,13 @@ void remover_final(Lista *ptr_lista){
     ptr_lista->ptr_cauda = ptr_lista->ptr_cauda->ptr_anterior;
     free(no_auxiliar);
 
+}
+
+void remover_inicio(Lista *ptr_lista){
+    
+    elemento *no_auxiliar = ptr_lista->ptr_cabeca;
+    ptr_lista->ptr_cabeca = ptr_lista->ptr_cabeca->ptr_proximo;
+    free(no_auxiliar);
 }
 
 void imprimir_inicio_final(Lista *ptr_lista){
