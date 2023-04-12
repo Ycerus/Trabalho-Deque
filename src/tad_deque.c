@@ -1,4 +1,4 @@
-#include "../include/lista_duplamente_ligada.h"
+#include "../include/tad_deque.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -58,9 +58,7 @@ void adicionar_inicio(Lista *ptr_lista, Aluno dados)
     {
 
         ptr_novo_elemento->ptr_proximo = ptr_lista->ptr_cabeca;
-
         ptr_lista->ptr_cabeca->ptr_anterior = ptr_novo_elemento;
-
         ptr_lista->ptr_cabeca = ptr_novo_elemento;
     }
 
@@ -201,23 +199,31 @@ void buscar_inicio(Lista *ptr_lista)
 {
     elemento *primeiro_no = ptr_lista->ptr_cabeca;
 
-    printf("O primeiro aluno eh : \n");
-    printf("Nome -> %s \n", primeiro_no->dados.nome);
-    printf("Cpf -> %s \n", primeiro_no->dados.cpf);
-    printf("Curso -> %s \n", primeiro_no->dados.curso);
-    printf("Idade -> %d \n", primeiro_no->dados.idade);
-    printf("--------------------------\n");
+    if (ptr_lista->tamanho != 0){
+        printf("O primeiro aluno eh : \n");
+        printf("Nome -> %s \n", primeiro_no->dados.nome);
+        printf("Cpf -> %s \n", primeiro_no->dados.cpf);
+        printf("Curso -> %s \n", primeiro_no->dados.curso);
+        printf("Idade -> %d \n", primeiro_no->dados.idade);
+        printf("--------------------------\n");
+    } else {
+        printf("Lista vazia!\n");
+    }
 };
 
 void buscar_final(Lista *ptr_lista)
 {
     elemento *ultimo_no = ptr_lista->ptr_cauda;
 
-    printf("O ultimo aluno eh : \n");
-    printf("Nome -> %s \n", ultimo_no->dados.nome);
-    printf("Cpf -> %s \n", ultimo_no->dados.cpf);
-    printf("Curso -> %s \n", ultimo_no->dados.curso);
-    printf("Idade -> %d \n", ultimo_no->dados.idade);
-    printf("--------------------------\n");
+    if (ptr_lista->tamanho != 0){
+        printf("O ultimo aluno eh : \n");
+        printf("Nome -> %s \n", ultimo_no->dados.nome);
+        printf("Cpf -> %s \n", ultimo_no->dados.cpf);
+        printf("Curso -> %s \n", ultimo_no->dados.curso);
+        printf("Idade -> %d \n", ultimo_no->dados.idade);
+        printf("--------------------------\n");
+    } else {
+        printf("Lista vazia!\n");
+    }
 
 };

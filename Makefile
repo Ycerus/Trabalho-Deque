@@ -1,15 +1,15 @@
 all: app_main
 
-app_main: app_main.o lista_duplamente_ligada.o  
-	gcc obj/app_main.o obj/lista_duplamente_ligada.o -o bin/app_main.out	
+app_main: app_main.o tad_deque.o  
+	gcc obj/app_main.o obj/tad_deque.o -o bin/app_main.out	
 # para o windows comentar a linha acima e descomentar a linha abaixo
 #gcc obj/app_main.o obj/lista_ligada.o -o bin/app_main.exe	
 
 
-lista_duplamente_ligada.o: src/lista_duplamente_ligada.c include/lista_duplamente_ligada.h
-	gcc -I include -Wall -Werror -c src/lista_duplamente_ligada.c -o obj/lista_duplamente_ligada.o
+tad_deque.o: src/tad_deque.c include/tad_deque.h
+	gcc -I include -Wall -Werror -c src/tad_deque.c -o obj/tad_deque.o
 
-app_main.o: apps/app_main.c include/lista_duplamente_ligada.h
+app_main.o: apps/app_main.c include/tad_deque.h
 	gcc -I include -Wall -Werror -c apps/app_main.c -o obj/app_main.o
 
 run:
